@@ -7,10 +7,77 @@ body {
 }
 
 h1 {
-	color: navy;
+	color: #111;
 	text-align: center;
+}
+
+/* Zebra table styles for skills page */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1rem 0;
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: .5rem .75rem;
+	text-align: left;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f2f6ff; /* subtle blue stripe */
+}
+
+caption { caption-side: top; font-weight: 600; margin-bottom: .5rem; }
+
+.skills-page h1 {
+	color: navy;
+}
+
+.bio-page h1 {
+	color: navy;
 }
 
 .contact-page h1 {
 	font-size: 16px;
+	color: navy;
 }
+
+/* Contact page layout & form styles */
+.contact-page form {
+	max-width: 720px;
+	margin: 0.5rem auto 1.5rem auto;
+	background: #fff;
+	padding: 1rem;
+	border-radius: 6px;
+	border: 1px solid #e6e6e6;
+}
+
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page textarea,
+.contact-page select {
+	width: 100%;
+	padding: .5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: .6rem;
+}
+
+.contact-page button[type="submit"] {
+	background: navy;
+	color: #fff;
+	padding: .6rem 1rem;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.contact-page iframe {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+
+.contact-page img { max-width: 100%; height: auto; display:block; }
