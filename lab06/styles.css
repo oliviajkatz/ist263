@@ -1,0 +1,121 @@
+/* styles.css - global + page-specific styles for bio, contact, skills pages */
+
+:root {
+  --accent: #0366d6;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --max-width: 900px;
+  --radius: 6px;
+}
+
+/* --- Base / layout --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.45;
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 { color: #111; margin: 0 0 .5rem 0; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Utility classes */
+.center { text-align: center; }
+.muted { color: var(--muted); font-size: .95rem; }
+.container { max-width: 800px; margin: 0 auto; }
+
+/* --- Bio page styles --- */
+/* bio.html: plain text profile and (optional) profile image */
+/* Targets paragraphs and images; safe to include even if page lacks an image */
+.bio-intro, body > p:first-of-type {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* Images used in bio or contact pages */
+img { max-width: 100%; height: auto; border-radius: 6px; display: block; }
+
+/* --- Contact page styles --- */
+/* contact.html contains a <form> and contact info paragraphs */
+form {
+  background: #fbfdff;
+  border: 1px solid #e6eef8;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(2,6,23,0.02);
+  max-width: 720px;
+}
+
+fieldset { border: 1px solid #e6e6e6; padding: 1rem; border-radius: 6px; }
+legend { font-weight: 600; padding: 0 .25rem; }
+
+label { display: block; margin-bottom: .25rem; font-weight: 500; }
+
+input[type="text"], input[type="email"], textarea, select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .5rem .6rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin-bottom: .6rem;
+}
+
+input[type="radio"] { margin-right: .35rem; }
+
+textarea { min-height: 120px; resize: vertical; }
+
+button[type="submit"], button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: .55rem .9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button[type="submit"]:hover { filter: brightness(.95); }
+
+/* Make embedded map and images responsive */
+iframe { max-width: 100%; height: auto; border: 0; }
+
+/* --- Skills page styles --- */
+/* skills.html contains a table of skills; keep table readable */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin: 0.5rem 0 2rem 0;
+}
+
+th, td {
+  border: 1px solid #e9e9e9;
+  padding: .6rem .75rem;
+  text-align: left;
+}
+
+tr:nth-child(even) { background: #f6f6f6; }
+
+caption { caption-side: top; text-align: left; font-weight: 600; margin-bottom: .5rem; }
+
+/* Small screens: make table horizontally scrollable */
+@media (max-width: 560px) {
+  table { display: block; width: 100%; overflow-x: auto; }
+}
+
+/* --- Small helpers for consistent spacing --- */
+p { margin: 0 0 1rem 0; }
+
+/* Make lists and paragraphs look tidy in all pages */
+ul, ol { margin: 0 0 1rem 1.25rem; }
+
+/* End of stylesheet */
