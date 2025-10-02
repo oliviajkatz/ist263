@@ -15,8 +15,33 @@ h1 {
 	color: navy;
 }
 
-p {
+.bio-page h1 {
+	color: navy;
+}
+
+.contact-page h1 {
 	font-size: 16px;
 	color: #333;
 }
 
+/* Skills table styling */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1rem 0 2rem 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+th, td {
+	border: 1px solid #e6e6e6;
+	padding: .6rem .75rem;
+	text-align: left;
+}
+
+tr:nth-child(even) { background: #f6f6f6; }
+
+caption { caption-side: top; font-weight: 600; margin-bottom: .5rem; }
+
+@media (max-width: 560px) {
+	table { display: block; overflow-x: auto; }
+}
