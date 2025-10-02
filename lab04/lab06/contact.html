@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+        <title>Contact</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body> 
+        <h1>Contact</h1>
+        <form action="https://formspree.io/f/meolbpvr" method="POST">
+            <fieldset>
+                <legend>Send a message</legend>
+                <p>
+                    <label for="fname">First name</label><br>
+                    <input type="text" id="fname" name="fname" required>
+                </p>
+                <p>
+                    <label for="lname">Last name</label><br>
+                    <input type="text" id="lname" name="lname" required>
+                </p>
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <span>Gender</span><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </p>
+                <p>
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </fieldset>
+        </form>
+
+        <p>Olivia Katz</p>
+        <p>Syracuse University</p>
+        <p>900 South Crouse Ave, Syracuse, NY 13244</p>
+        <p>
+            <a href="mailto:okatz01@syr.edu">okatz01@syr.edu</a>
+        </p>
+        <p>
+            <a href="https://www.linkedin.com/in/oliviakatz7/" target="_blank">My LinkedIn Profile</a>
+        </p>
+        <p>
+            <img src="photo.png" alt="Olivia Katz">
+        </p>
+        <p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.835648622823!2d-76.1474206845932!3d43.03786897914671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d32b1fece5e6b7%3A0x8c8e4f4e6f4e4e4e!2sSyracuse%20University!5e0!3m2!1sen!2sus!4v1616161616161" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </p>
+    </body>
+    </html>
