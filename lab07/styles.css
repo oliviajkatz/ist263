@@ -1,21 +1,21 @@
 /* ===== Global Styles ===== */
 body { 
-  background-color: #abaff6e3;    /* body background color */
-  color: #333333;               /* text color */
+  background-color: #f5f7fb;    /* body background color */
+  color: #1f2937;               /* text color */
   font-family: system-ui, Arial, sans-serif;
 }
 
 /* ===== Links & Headings ===== */
 a { 
-  color: #0066cc;               /* link color */
+  color: #1d4ed8;               /* link color */
 }
 h1, h2, h3 { 
-  color: #111111;               /* heading color */
+  color: #0f172a;               /* heading color */
 }
 
 /* ===== Navigation Bar ===== */
 nav {
-  background-color: #004b6e;    /* site navigation background */
+  background-color: #0b4a6f;    /* site navigation background */
   padding: 10px;                /* box model: padding */
   margin-bottom: 30px;          /* box model: margin-bottom */
 }
