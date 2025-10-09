@@ -24,10 +24,25 @@ nav {
 nav a {
   color: #ffffff;               /* site navigation link color */
   text-decoration: none;
-  padding: 4px 8px;             /* makes hover area larger */
+  padding: 6px 10px;            /* makes hover area larger */
+  border-radius: 4px;
+  display: inline-block;
 }
 
 /* descendant + pseudo selector (nav a:hover) */
 nav a:hover {
   background-color: #0a84bf;    /* site navigation hover highlight */
+  color: #002533;
+}
+
+/* keyboard accessibility: visible focus state */
+nav a:focus {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+/* small-screen stacking */
+@media (max-width: 480px) {
+  nav { text-align: center; }
+  nav a { display: block; margin: 6px 0; }
 }

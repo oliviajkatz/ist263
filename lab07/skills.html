@@ -7,14 +7,20 @@
         <link rel="stylesheet" href="styles.css">
         <!-- Fallback page-scoped zebra styles in case external CSS isn't loaded -->
         <style>
-            .skills-page table { width:100%; border-collapse:collapse; }
+            /* Keep Arial font and visible borders for the skills table */
+            .skills-page table { font-family: Arial, sans-serif; width:100%; border-collapse:collapse; }
             .skills-page th, .skills-page td { border:1px solid #ddd; padding:.5rem .75rem; text-align:left; }
             .skills-page tbody tr:nth-child(even) { background-color:#f2f6ff; }
             .skills-page caption { caption-side:top; font-weight:600; margin-bottom:.5rem; }
         </style>
 </head>
 <body class="skills-page">
-  <main class="container">
+            <nav>
+                <a href="index.html">Home</a> |
+                <a href="skills.html">Skills</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+    <main class="container">
     <h1>Olivia's Skills</h1>
     <p class="muted">Skills and proficiency levels</p>
 
