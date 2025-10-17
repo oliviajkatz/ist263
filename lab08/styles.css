@@ -13,6 +13,15 @@ h1, h2, h3 {
   color: #0f172a;               /* heading color */
 }
 
+/* ----- Page header sizing ----- */
+header h1 {
+  /* responsive scale: min 1.8rem, prefer 4vw, max 3.2rem */
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
 /* ===== Navigation Bar ===== */
 nav {
   background-color: #0b4a6f;    /* site navigation background */
