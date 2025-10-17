@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab 08 Practice</title>
+
+  <style>
+    /* === FLOAT PRACTICE === */
+    .float-left {
+      float: left;
+      margin: 0 12px 8px 0; /* space between image & text */
+      max-width: 220px;
+    }
+
+    .clear { clear: both; }
+
+    footer .copy {
+      float: left;
+    }
+
+    footer .motto {
+      float: right;
+    }
+
+    footer::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* === FLEXBOX PRACTICE === */
+    .part2 {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Flex ratios */
+    .article1 { flex: 2; background: #dce8ff; }
+    .article2 { flex: 1; background: #e5f7de; }
+    .article3 { flex: 1; background: #ffeada; }
+
+    /* Reverse the order visually */
+    .article1 { order: 3; }
+    .article2 { order: 2; }
+    .article3 { order: 1; }
+
+    /* Spacing and rounded corners */
+    .part2 article {
+      padding: 12px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Float and Flexbox Practice</h1>
+
+  <!-- FLOAT EXERCISE -->
+  <article class="float-section">
+    <img src="images/sample.jpg" alt="Sample" class="float-left" />
+    <p>
+      This paragraph demonstrates how text wraps around an image floated
+      to the left. The image stays on the left side, while the text flows
+      beside it. Notice the margin so the text doesn’t touch the image.
+    </p>
+    <p>
+      When finished, use a “clear” div to stop the float so the next content
+      starts below.
+    </p>
+    <div class="clear"></div>
+  </article>
+
+  <footer>
+    <hr />
+    <p class="copy">&copy; 2025 Your Name</p>
+    <p class="motto">“First, solve the problem. Then, write the code.” – John Johnson</p>
+  </footer>
+
+  <hr />
+
+  <!-- FLEXBOX EXERCISE -->
+  <h2>The Flexbox Part</h2>
+
+  <div class="part2">
+    <article class="article1">
+      <h3>Article 1</h3>
+      <p>This one is most important and takes up twice the space.</p>
+    </article>
+    <article class="article2">
+      <h3>Article 2</h3>
+      <p>Secondary content block.</p>
+    </article>
+    <article class="article3">
+      <h3>Article 3</h3>
+      <p>Another content block shown third in the code but first visually.</p>
+    </article>
+  </div>
+</body>
+</html>
