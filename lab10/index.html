@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Olivia Katz — Home</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* --- GENERAL --- */
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    main.container {
+      padding: 20px;
+    }
+
+    /* --- NAV (desktop default) --- */
+    nav {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .25rem;
+    }
+    nav a { text-decoration: none; margin: 0 .5rem; }
+    nav a:hover { text-decoration: underline; }
+    nav span { opacity: .6; }
+
+    /* --- FLOAT PRACTICE --- */
+    .float-left {
+      float: left;
+      margin: 0 16px 10px 0;
+      width: min(45%, 220px); /* responsive width cap */
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .clear { clear: both; }
+
+    /* --- FLEXBOX PRACTICE --- */
+    .part2 {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;          /* allow wrapping on smaller screens */
+    }
+
+    .part2 article {
+      flex: 1 1 260px;          /* responsive cards */
+      padding: 12px;
+      border-radius: 10px;
+      background: #f5f7fb;
+      box-sizing: border-box;
+    }
+
+    .article1 { flex: 2 1 360px; background: #e8f0ff; }
+    .article2 { background: #e6f7ea; }
+    .article3 { background: #fff1dc; }
+
+    /* --- FOOTER FLOATS --- */
+    footer {
+      padding: 16px;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+    footer .copy { float: left; }
+    footer .motto { float: right; }
+    footer::after { content: ""; display: block; clear: both; }
+
+    /* --- MEDIA QUERIES --- */
+    @media (max-width: 768px) {
+      /* Stack nav vertically and hide separators */
+      nav a { display: block; width: 100%; padding: .6rem 0; }
+      nav span { display: none; }
+      nav { gap: .25rem; }
+    }
+
+    @media (max-width: 700px) {
+      /* Drop the float on the photo so it centers and fills nicely */
+      .float-left {
+        float: none;
+        margin: 0 auto 16px auto;
+        width: 100%;
+        max-width: 420px; /* keep it from getting too huge on small tablets */
+      }
+    }
+  </style>
+</head>
+
+<body class="home-page">
+  <nav>
+    <a href="index.html">Home</a> <span>|</span>
+    <a href="skills.html">Skills</a> <span>|</span>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <img src="photo.png" alt="Olivia Katz" class="float-left">
+    <h1>About Olivia Katz</h1>
+  </header>
+
+  <main class="container">
+    <p>My name is Olivia Jane Katz. I am currently a Junior at Syracuse University studying Communication and Rhetorical Studies with a minor in Information Management and Technology. I am interested in studying communication and how it benefits everyday work, which will guide me in the future.</p>
+    <p>I hope to pursue a career in Public Relations or Marketing after graduating in 2027. I am a very driven person who appreciates every opportunity that comes my way. Skills such as communication, point-of-sale systems, merchandising, luxury branding, and problem-solving will benefit me throughout my life.</p>
+    <p>Outside of school, I enjoy working out. I grew up playing field hockey; therefore, being active has always been something I enjoy. I love watching romance TV shows or movies, but I dislike reading.</p>
+    <p>I have a brother named Miles, who is 21 and currently works in technology for NBC in Los Angeles. My mother, Debbie, and father, Marc, are by far my favorite people ever. I currently have four animals: two dogs and two cats. This is amusing because I am allergic to cats, and my last name is Katz.</p>
+    <div class="clear"></div>
+
+    <!-- --- FLEXBOX PRACTICE AREA --- -->
+    <section class="part2">
+      <article class="article1">
+        <h2>Education</h2>
+        <p>Syracuse University — B.S. in Communication and Rhetorical Studies with a minor in Information Management and Technology (Class of 2027).</p>
+      </article>
+      <article class="article2">
+        <h2>Experience</h2>
+        <p>Public relations and marketing internships; retail and branding experience; skilled in communication and team collaboration.</p>
+      </article>
+      <article class="article3">
+        <h2>Hobbies</h2>
+        <p>Field hockey, working out, fashion, and spending time with my dogs and cats.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p class="copy">&copy; 2025 Olivia Katz</p>
+    <p class="motto">“First, solve the problem. Then, write the code.” – John Johnson</p>
+  </footer>
+</body>
+</html>
+        
