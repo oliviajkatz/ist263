@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 11 – Shell Game (In-Page Messages)</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    img {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    img:hover { transform: scale(1.05); }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      min-height: 2rem;
+    }
+  </style>
+</head>
+<body onload="ShuffleShells();">
+  <h1>Shell Game – In-Page Messages</h1>
+  <p>Pick the shell with the pea underneath. The shells shuffle each time!</p>
+
+  <div class="container">
+    <img id="first"
+         src="walnut1.jpg"
+         alt="Shell 1" onclick="WinnerMessage();" />
+    <img id="second"
+         src="walnut2.jpg"
+         alt="Shell 2" onclick="TryAgain();" />
+    <img id="third"
+         src="walnut3.jpg"
+         alt="Shell 3" onclick="TryAgain();" />
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    function WinnerMessage() {
+      document.getElementById("message").innerHTML = "Winner – you found the pea!";
+    }
+    function TryAgain() {
+      document.getElementById("message").innerHTML = "Wrong shell – try again!";
+    }
+
+    function ShuffleShells() {
+      const order = [1, 2, 3];
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      document.getElementById("first").style.order = order[0];
+      document.getElementById("second").style.order = order[1];
+      document.getElementById("third").style.order = order[2];
+    }
+  </script>
+</body>
+</html>
