@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Planet Slideshow</title>
+
+  <!-- CSS goes inside the <style> tag -->
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+
+  /* Large displayed planet image */
+  #planetphoto img { width: 220px; height: auto; }
+
+  /* Thumbnails */
+  #thumbnails img { width: 80px; height: auto; margin: 6px; cursor: pointer; }
+
+    /* Hide all planets except Mercury */
+    #venus, #earth, #mars, #jupiter, #saturn, #uranus, #neptune { display: none; }
+    #venusinfo, #earthinfo, #marsinfo, #jupiterinfo, #saturninfo, #uranusinfo, #neptuneinfo { display: none; }
+
+    /* Layout: side-by-side on wide screens, stacked on small screens */
+    #planetphoto { float: left; width: 40%; }
+    #planetinfo  { float: left; width: 60%; text-align: left; padding: 10px; box-sizing: border-box; }
+
+    /* Responsive: stack photo above info on narrow viewports */
+    @media (max-width: 700px) {
+      #planetphoto, #planetinfo { float: none; width: 100%; }
+      #thumbnails { text-align: center; }
+      #planetphoto img { width: 180px; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Solar System Planets</h1>
+
+  <!-- Thumbnail images (each has onclick for switching planets) -->
+  <div id="thumbnails">
+    <img src="mercury.jpg" alt="Mercury" onclick="showPlanet('mercury')">
+    <img src="venus.jpg"   alt="Venus"   onclick="showPlanet('venus')">
+    <img src="earth.jpg"   alt="Earth"   onclick="showPlanet('earth')">
+    <img src="mars.jpg"    alt="Mars"    onclick="showPlanet('mars')">
+    <img src="jupiter.jpg" alt="Jupiter" onclick="showPlanet('jupiter')">
+    <img src="saturn.jpg"  alt="Saturn"  onclick="showPlanet('saturn')">
+    <img src="uranus.jpg"  alt="Uranus"  onclick="showPlanet('uranus')">
+    <img src="neptune.jpg" alt="Neptune" onclick="showPlanet('neptune')">
+  </div>
+
+  <!-- Big image + info section -->
+  <div id="planetphoto">
+  <img id="mercury" src="mercury.jpg" alt="Mercury">
+  <img id="venus" src="venus.jpg" alt="Venus">
+  <img id="earth" src="earth.jpg" alt="Earth">
+  <img id="mars" src="mars.jpg" alt="Mars">
+  <img id="jupiter" src="jupiter.jpg" alt="Jupiter">
+  <img id="saturn" src="saturn.jpg" alt="Saturn">
+  <img id="uranus" src="uranus.jpg" alt="Uranus">
+  <img id="neptune" src="neptune.jpg" alt="Neptune">
+  </div>
+
+  <div id="planetinfo">
+    <div id="mercuryinfo">Mercury is the smallest planet and closest to the Sun.</div>
+    <div id="venusinfo">Venus has a thick, toxic atmosphere and hottest surface.</div>
+    <div id="earthinfo">Earth is our home planet with liquid water and life.</div>
+    <div id="marsinfo">Mars is known as the Red Planet and may have once had water.</div>
+    <div id="jupiterinfo">Jupiter is the largest planet with a Great Red Spot.</div>
+    <div id="saturninfo">Saturn is famous for its bright ring system.</div>
+    <div id="uranusinfo">Uranus rotates on its side and has faint rings.</div>
+    <div id="neptuneinfo">Neptune is blue and the windiest planet.</div>
+  </div>
+
+  <!-- JavaScript goes inside <script> tags -->
+  <script>
+    function PlanetsOff() {
+      const planets = ['mercury','venus','earth','mars','jupiter','saturn','uranus','neptune'];
+      for (let p of planets) {
+        document.getElementById(p).style.display = 'none';
+        document.getElementById(p + 'info').style.display = 'none';
+      }
+    }
+
+    function showPlanet(name) {
+      PlanetsOff();
+      document.getElementById(name).style.display = 'block';
+      document.getElementById(name + 'info').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
