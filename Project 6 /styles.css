@@ -1,0 +1,238 @@
+:root {
+  --bg: #fdfdfd;
+  --text: #222222;
+  --primary: #b45cff;   /* soft purple accent */
+  --nav-bg: #ffffff;
+  --border: #cccccc;
+}
+
+/* Global reset-ish */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Skip link */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* Header & nav */
+
+.site-header {
+  display: flex;                 /* FLEXBOX */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+.main-nav {
+  /* ensure nav takes remaining horizontal space and allows keyboard focus styling */
+  flex: 1 1 auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;                /* FLEXBOX: horizontal by default */
+  gap: 2rem;                    /* slightly larger gap for readability */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-end;    /* push links to the right of header */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  padding-bottom: 0.2rem;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--primary);
+}
+
+.main-nav a.current {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Main layout */
+
+.page-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Home hero */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  max-width: 400px;
+}
+
+.hero-img-square {
+  width: 100%;
+  aspect-ratio: 1 / 1;          /* keeps it square */
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+/* About section */
+
+.about h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Before / After pages */
+
+.before-after-gallery {
+  display: flex;                 /* FLEXBOX */
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.before-after-item {
+  text-align: center;
+}
+
+.square-img {
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Description sections */
+
+.description {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  background-color: #fafafa;
+}
+
+/* Button styles: base and interactive states */
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  display: inline-block;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, transform 120ms ease;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus {
+  outline: 3px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  outline-offset: 2px;
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+/* Mobile: stack nav & content so it fits smaller screens */
+
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;      /* vertical nav on mobile */
+    gap: 0.5rem;
+  }
+
+  .page-main {
+    padding-inline: 1rem;
+  }
+
+  .before-after-gallery {
+    gap: 1rem;
+  }
+
+  .square-img,
+  .hero-img-square {
+    width: 100%;
+    max-width: 320px;
+  }
+}
